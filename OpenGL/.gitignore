@@ -1,0 +1,6 @@
+.vs
+**/x64/
+/x64/
+**/Debug/
+learn_opengl
+x64

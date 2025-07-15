@@ -1,0 +1,17 @@
+﻿<!--StartupUri指定启动页面-->
+<!-- Window1.xaml：Grid和StackPanel的使用 -->
+<!-- Window2.xaml：Style的使用 -->
+
+<Application x:Class="Demo1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Demo1"
+             StartupUri="Window2.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

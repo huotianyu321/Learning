@@ -1,0 +1,78 @@
+﻿<Window x:Class="Demo1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo1"
+        mc:Ignorable="d"
+        Title="Grid和StackPanel的使用" Height="900" Width="1200">
+    <Grid ShowGridLines="True">
+        <!-- 定义每行 -->
+        <Grid.RowDefinitions>
+            <!-- 第0行 -->
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- 定义每列 -->
+        <!-- 后边只用到第0列 -->
+        <Grid.ColumnDefinitions>
+            <!-- 占据4/5的剩余宽度-->
+            <ColumnDefinition Width="4*"/>
+            <!-- 占据1/5的剩余宽度-->
+            <ColumnDefinition Width="1*"/>
+            <!-- 这一列的宽度根据其中的内容的宽度自动变化-->
+            <ColumnDefinition Width="AUTO" />
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="2" Width="50" Content="关闭" />
+
+        <!-- 开始填充每行的内容 -->
+
+        <!-- 第0行: 模仿顶部按钮，水平堆叠，不指定行列，默认为第0行第0列-->
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <!-- Margin的顺序是左上右下-->
+            <Button Content="文件" Height="20" Width="40" Margin="0, 0, 0, 0"/>
+            <Button Content="编辑" Height="20" Width="40" Margin="10, 0, 0, 0"/>
+            <Button Content="查看" Height="20" Width="40" Margin="10, 0, 0, 0"/>
+            <Button Content="外观" Height="20" Width="40" Margin="10, 0, 0, 0"/>
+            <Button Content="设置" Height="20" Width="40" Margin="10, 0, 0, 0"/>
+            <Button Content="帮助" Height="20" Width="40" Margin="10, 0, 0, 0"/>
+        </StackPanel>
+
+        <!-- 第1行: 模仿小图标按钮，水平堆叠，指定第1行，指定第0列-->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+            <Button Content="1" Height="20" Width="20" Margin="0, 0, 0, 0"/>
+            <Button Content="2" Height="20" Width="20" Margin="5, 0, 0, 0"/>
+            <Button Content="3" Height="20" Width="20" Margin="5, 0, 0, 0"/>
+            <Button Content="4" Height="20" Width="20" Margin="5, 0, 0, 0"/>
+            <Button Content="5" Height="20" Width="20" Margin="5, 0, 0, 0"/>
+            <Button Content="6" Height="20" Width="20" Margin="5, 0, 0, 0"/>
+        </StackPanel>
+
+        <!-- 第2行: 模仿正文区域，用嵌套的Grid填充第2行，对第2行进行分列-->
+        <Grid Grid.Row="2" ShowGridLines="True">
+            <!--定义列布局-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!-- 填充列 -->
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" >
+                <Button Content="1" Height="20" Width="70" Margin="0, 0, 0, 0"/>
+                <Button Content="2" Height="20" Width="70" Margin="0, 5, 0, 0"/>
+                <Button Content="3" Height="20" Width="70" Margin="0, 5, 0, 0"/>
+                <Button Content="4" Height="20" Width="70" Margin="0, 5, 0, 0"/>
+                <Button Content="5" Height="20" Width="70" Margin="0, 5, 0, 0"/>
+                <Button Content="6" Height="20" Width="70" Margin="0, 5, 0, 0"/>
+            </StackPanel>
+            <TextBox TextWrapping="Wrap" Grid.Column="1"/>
+        </Grid>
+
+        <!-- 第3行: 模仿底部状态栏-->
+        <TextBlock Text="底部状态栏" Grid.Row="3"/>
+    </Grid>
+</Window>

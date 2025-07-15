@@ -1,0 +1,33 @@
+﻿<Window x:Class="Demo1.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo1"
+        mc:Ignorable="d"
+        Title="Style的使用" Height="800" Width="1200">
+    
+    <!--在Window.Resources标签下的样式只能作用于当前Window, 无法全局引用-->
+    <Window.Resources>
+        <!--指定样式作用于Button控件, 作为默认样式 （这部分样式放在资源字典中全局引用）-->
+        <!--<Style TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>-->
+        
+        <!--命名key，定制样式, 需要指定TargetType和BasedOn-->
+        <Style x:Key="Login" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Width" Value="100" />
+        </Style>
+    </Window.Resources>
+    
+    
+    <StackPanel>
+        <Button Style="{StaticResource Login}" Content="登录"/>
+        <!--使用全局资源字典中的样式-->
+        <Button Style="{StaticResource Exit}" Content="退出"/>
+        <Button Content="忘记密码"/>
+    </StackPanel>
+</Window>
