@@ -8,5 +8,17 @@
     <Compile Update="Window2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Window3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Window4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Window5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Window6.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

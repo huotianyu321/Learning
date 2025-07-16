@@ -1,12 +1,17 @@
 ﻿<!--StartupUri指定启动页面-->
+<!-- MainWindow.xaml 生命周期 -->
 <!-- Window1.xaml：Grid和StackPanel的使用 -->
 <!-- Window2.xaml：Style的使用 -->
+<!-- Window3.xaml 自定义Button模板 -->
+<!-- Window4.xaml WPF中文网ScrollBar滚动条demo -->
+<!-- Window5.xaml WPF中文网ListBox列表控件 demo -->
+<!-- Window6.xaml INotifyPropertyChanged demo-->
 
 <Application x:Class="Demo1.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Demo1"
-             StartupUri="Window2.xaml">
+             StartupUri="Window6.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
